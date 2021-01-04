@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+
+  "name": "Slavic transliterate",
+  "description": "Transliterates Polish latin script to cyrillic",
+  "icons": {
+    "48": "icons/s-48.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/s-48.png",
+    "default_title": "Transliterate Polish latin -> cyrillic"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
