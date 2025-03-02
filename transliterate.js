@@ -1,5 +1,20 @@
 function mapTextNodes(element, f) {
   for (let node of element.childNodes) {
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      const nodeName = node.nodeName.toLowerCase();
+      if ([
+        'script',
+        'style',
+        'code',
+        'pre',
+        'textarea',
+        'template',
+        'svg'
+      ].includes(nodeName)) {
+        continue;
+      }
+    }
+
     switch (node.nodeType) {
       case Node.DOCUMENT_NODE:
         mapTextNodes(node, f);
